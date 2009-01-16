@@ -12,14 +12,22 @@
 
 @implementation RootViewController
 
-/*
+- (void) loadPrefs {	
+	// read user prefs
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	gitHubUserName = [defaults stringForKey:@"GitHubUserName"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+	[self loadPrefs];
+	
+	DevLog2(@"username: %@", gitHubUserName);
+    
+	// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-*/
+
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -131,8 +139,8 @@
 }
 */
 
-
 - (void)dealloc {
+	[gitHubUserName release];
     [super dealloc];
 }
 

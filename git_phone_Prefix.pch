@@ -6,3 +6,17 @@
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
 #endif
+
+// -----------------------------------------------------------------------------
+#pragma mark -
+#pragma mark Development Logging
+
+#ifdef __DEBUG__
+#define DevLog(a)   NSLog(a)
+#define DevLog2(a, b) NSLog(a, b)
+#define DevLog3(a, b, c) NSLog(a, b, c)
+#else
+#define DevLog(a)
+#define DevLog2(a, b)
+#define DevLog3(a, b, c)
+#endif
