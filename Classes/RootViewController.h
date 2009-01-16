@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UITableViewController {
-	
-	NSString *gitHubUserName;
 }
 
 @end
