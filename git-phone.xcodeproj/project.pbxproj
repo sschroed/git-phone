@@ -11,6 +11,8 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		22E17B660F22334300D2853B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E17B650F22334300D2853B /* Reachability.m */; };
+		22E17B890F2233E400D2853B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E17B880F2233E400D2853B /* SystemConfiguration.framework */; };
 		22FA50040F212ED300709123 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22FA50030F212ED300709123 /* Settings.bundle */; };
 		22FA502E0F21374300709123 /* octocat.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FA502D0F21374300709123 /* octocat.png */; };
 		22FA50CE0F21463D00709123 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA50CD0F21463D00709123 /* Config.m */; };
@@ -26,6 +28,9 @@
 		1D3623250D0F684500981E51 /* git_phoneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = git_phoneAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* git-phone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "git-phone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		22E17B640F22334300D2853B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Classes/Reachability.h; sourceTree = "<group>"; };
+		22E17B650F22334300D2853B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Classes/Reachability.m; sourceTree = "<group>"; };
+		22E17B880F2233E400D2853B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		22FA50030F212ED300709123 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		22FA502D0F21374300709123 /* octocat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = octocat.png; path = images/octocat.png; sourceTree = "<group>"; };
 		22FA50CC0F21463D00709123 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = Classes/Config.h; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				22E17B890F2233E400D2853B /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +101,8 @@
 		22FA50C70F2144F800709123 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				22E17B640F22334300D2853B /* Reachability.h */,
+				22E17B650F22334300D2853B /* Reachability.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22E17B880F2233E400D2853B /* SystemConfiguration.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
@@ -211,6 +220,7 @@
 				1D3623260D0F684500981E51 /* git_phoneAppDelegate.m in Sources */,
 				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
 				22FA50CE0F21463D00709123 /* Config.m in Sources */,
+				22E17B660F22334300D2853B /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

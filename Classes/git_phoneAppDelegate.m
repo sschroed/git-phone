@@ -24,9 +24,11 @@
 	DevLog2(@"username: %@", [[Config instance] gitHubUserName]);
 	
 	// Check if username is set
-	//if (gitHubUserName == NULL) {
-		
-	//}
+	if ([[Config instance] gitHubUserName] == NULL) {
+		DevLog(@"NULL");
+	} else {
+		DevLog(@"NOT NULL");
+	}
 }
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
