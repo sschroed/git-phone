@@ -14,6 +14,7 @@
 
 @interface git_phoneAppDelegate()
 - (void) showError:(NSString *)errorMessage;
+- (void) loadPreferences;
 @end
 
 @implementation git_phoneAppDelegate
@@ -21,20 +22,6 @@
 @synthesize window;
 @synthesize navigationController;
 
-- (void) loadPreferencess {	
-	// read user prefs
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	[[Config instance] setGitHubUserName:[defaults stringForKey:@"GitHubUserName"]];
-	
-	DevLog2(@"username: %@", [[Config instance] gitHubUserName]);
-	
-	// Check if username is set
-	if ([[Config instance] gitHubUserName] == NULL) {
-		DevLog(@"NULL");
-	} else {
-		DevLog(@"NOT NULL");
-	}
-}
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	
@@ -49,7 +36,7 @@
 		return;
 	} 
 	
-	[self loadPreferencess];
+	[self loadPreferences];
 }
 
 
@@ -61,6 +48,21 @@
 	ApplicationErrorViewController *errorController = [[ApplicationErrorViewController alloc] initWithNibName:@"ApplicationError" bundle:nil];
 	[errorController setErrorMessage:errorMessage]; 
 	[[self window] addSubview:errorController.view];
+}
+
+- (void) loadPreferences {	
+	// read user prefs
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	[[Config instance] setGitHubUserName:[defaults stringForKey:@"GitHubUserName"]];
+	
+	DevLog2(@"username: %@", [[Config instance] gitHubUserName]);
+	
+	// Check if username is set
+	if ([[Config instance] gitHubUserName] == NULL) {
+		DevLog(@"NULL");
+	} else {
+		DevLog(@"NOT NULL");
+	}
 }
 
 - (void)dealloc {
