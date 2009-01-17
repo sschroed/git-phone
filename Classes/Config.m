@@ -12,6 +12,7 @@
 @implementation Config
 
 @synthesize gitHubUserName;
+@synthesize baseURL;
 
 // Make model a singleton
 + (Config *)instance
@@ -28,6 +29,7 @@
 
 - (void) dealloc {
 	[gitHubUserName release];
+	[baseURL release];
 	[super dealloc];
 }
 

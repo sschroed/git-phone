@@ -8,8 +8,13 @@
 
 #import "git_phoneAppDelegate.h"
 #import "RootViewController.h"
+#import "ConnectivityController.h"
+#import "ApplicationErrorViewController.h"
 #import "Models.h"
 
+@interface git_phoneAppDelegate()
+- (void) showError:(NSString *)errorMessage;
+@end
 
 @implementation git_phoneAppDelegate
 
@@ -37,6 +42,13 @@
 	[window addSubview:[navigationController view]];
 	[window makeKeyAndVisible];
 	
+	// Ensure we have connectivity.
+	[[Config instance] setBaseURL:@"http://github.com"];
+	if(![ConnectivityController isGitHubWebServiceReachable:[[Config instance] baseURL]]) {
+		[self showError:@"Octocat cannot connect to GitHub."];
+		return;
+	} 
+	
 	[self loadPreferencess];
 }
 
@@ -45,6 +57,11 @@
 	// Save data if appropriate
 }
 
+- (void) showError:(NSString *)errorMessage {
+	ApplicationErrorViewController *errorController = [[ApplicationErrorViewController alloc] initWithNibName:@"ApplicationError" bundle:nil];
+	[errorController setErrorMessage:errorMessage]; 
+	[[self window] addSubview:errorController.view];
+}
 
 - (void)dealloc {
 	[navigationController release];

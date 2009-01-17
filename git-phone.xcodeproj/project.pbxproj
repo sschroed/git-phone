@@ -13,6 +13,10 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		22E17B660F22334300D2853B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E17B650F22334300D2853B /* Reachability.m */; };
 		22E17B890F2233E400D2853B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E17B880F2233E400D2853B /* SystemConfiguration.framework */; };
+		22E17B910F22361B00D2853B /* ConnectivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E17B900F22361B00D2853B /* ConnectivityController.m */; };
+		22E17B9D0F223AA600D2853B /* ApplicationErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E17B9C0F223AA600D2853B /* ApplicationErrorViewController.m */; };
+		22E17B9F0F223BC800D2853B /* ApplicationError.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E17B9E0F223BC800D2853B /* ApplicationError.xib */; };
+		22E17C080F223E9C00D2853B /* octocat_sad.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E17C070F223E9C00D2853B /* octocat_sad.png */; };
 		22FA50040F212ED300709123 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22FA50030F212ED300709123 /* Settings.bundle */; };
 		22FA502E0F21374300709123 /* octocat.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FA502D0F21374300709123 /* octocat.png */; };
 		22FA50CE0F21463D00709123 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA50CD0F21463D00709123 /* Config.m */; };
@@ -28,9 +32,15 @@
 		1D3623250D0F684500981E51 /* git_phoneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = git_phoneAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* git-phone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "git-phone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		22E17B640F22334300D2853B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Classes/Reachability.h; sourceTree = "<group>"; };
-		22E17B650F22334300D2853B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Classes/Reachability.m; sourceTree = "<group>"; };
+		22E17B640F22334300D2853B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		22E17B650F22334300D2853B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		22E17B880F2233E400D2853B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		22E17B8F0F22361B00D2853B /* ConnectivityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectivityController.h; sourceTree = "<group>"; };
+		22E17B900F22361B00D2853B /* ConnectivityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectivityController.m; sourceTree = "<group>"; };
+		22E17B9B0F223AA600D2853B /* ApplicationErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationErrorViewController.h; sourceTree = "<group>"; };
+		22E17B9C0F223AA600D2853B /* ApplicationErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationErrorViewController.m; sourceTree = "<group>"; };
+		22E17B9E0F223BC800D2853B /* ApplicationError.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicationError.xib; sourceTree = "<group>"; };
+		22E17C070F223E9C00D2853B /* octocat_sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = octocat_sad.png; path = images/octocat_sad.png; sourceTree = "<group>"; };
 		22FA50030F212ED300709123 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		22FA502D0F21374300709123 /* octocat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = octocat.png; path = images/octocat.png; sourceTree = "<group>"; };
 		22FA50CC0F21463D00709123 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = Classes/Config.h; sourceTree = "<group>"; };
@@ -80,9 +90,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		22E17B8D0F22357F00D2853B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				22E17B8F0F22361B00D2853B /* ConnectivityController.h */,
+				22E17B900F22361B00D2853B /* ConnectivityController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		22E17B990F223A3400D2853B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				22E17B9B0F223AA600D2853B /* ApplicationErrorViewController.h */,
+				22E17B9C0F223AA600D2853B /* ApplicationErrorViewController.m */,
+			);
+			name = ViewControllers;
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		22FA50100F21349300709123 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				22E17C070F223E9C00D2853B /* octocat_sad.png */,
 				22FA502D0F21374300709123 /* octocat.png */,
 			);
 			name = Images;
@@ -103,8 +133,10 @@
 			children = (
 				22E17B640F22334300D2853B /* Reachability.h */,
 				22E17B650F22334300D2853B /* Reachability.m */,
+				22E17B8D0F22357F00D2853B /* Controllers */,
 			);
 			name = Networking;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
@@ -112,6 +144,7 @@
 			children = (
 				22FA50C70F2144F800709123 /* Networking */,
 				22FA50C60F2144DF00709123 /* Models */,
+				22E17B990F223A3400D2853B /* ViewControllers */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -134,6 +167,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				22E17B9E0F223BC800D2853B /* ApplicationError.xib */,
 				22FA50100F21349300709123 /* Images */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
@@ -206,6 +240,8 @@
 				2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */,
 				22FA50040F212ED300709123 /* Settings.bundle in Resources */,
 				22FA502E0F21374300709123 /* octocat.png in Resources */,
+				22E17B9F0F223BC800D2853B /* ApplicationError.xib in Resources */,
+				22E17C080F223E9C00D2853B /* octocat_sad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +257,8 @@
 				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
 				22FA50CE0F21463D00709123 /* Config.m in Sources */,
 				22E17B660F22334300D2853B /* Reachability.m in Sources */,
+				22E17B910F22361B00D2853B /* ConnectivityController.m in Sources */,
+				22E17B9D0F223AA600D2853B /* ApplicationErrorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
