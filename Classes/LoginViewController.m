@@ -32,6 +32,7 @@
 	if (nil != textField.text && [textField.text length] > 0){
 		[[Config instance] setGitHubUserName:[textField text]];
 		[textField resignFirstResponder];
+		[Repository loadAll];
 		return YES;
 	} else {
 		[self showAlert:@"Please enter your GitHub username" withTitle:@"Octocat FAIL"];

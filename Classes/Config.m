@@ -13,6 +13,7 @@
 
 @synthesize gitHubUserName;
 @synthesize baseURL;
+@synthesize repositories;
 
 // Make model a singleton
 + (Config *)instance
@@ -25,6 +26,10 @@
 			gInstance = [[self alloc] init];
     }
 	return(gInstance);
+}
+
+- (NSString *)baseAPIURL {
+	return [NSString stringWithFormat:@"%@/api/v1/json", [[Config instance] baseURL]];
 }
 
 - (void) dealloc {

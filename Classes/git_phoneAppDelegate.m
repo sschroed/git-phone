@@ -63,6 +63,7 @@
 		[window addSubview:[loginViewController view]];
 		[navigationController presentModalViewController:loginViewController animated:YES];
 	} else {
+		//TODO: Autologin
 		DevLog(@"NOT NULL");
 	}
 }
