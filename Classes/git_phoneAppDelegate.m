@@ -11,7 +11,6 @@
 #import "ConnectivityController.h"
 #import "ApplicationErrorViewController.h"
 #import "LoginViewController.h"
-#import "Models.h"
 
 @interface git_phoneAppDelegate()
 - (void) showError:(NSString *)errorMessage;

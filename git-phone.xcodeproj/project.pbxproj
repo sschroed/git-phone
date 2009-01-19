@@ -20,6 +20,7 @@
 		22E17C1E0F22467200D2853B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E17C1D0F22467200D2853B /* LoginViewController.m */; };
 		22E17C3B0F22490800D2853B /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E17C3A0F22490800D2853B /* Login.xib */; };
 		22E17C410F224A5700D2853B /* octocat_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E17C400F224A5700D2853B /* octocat_large.png */; };
+		22E17D0D0F24F08C00D2853B /* Connector.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E17D0C0F24F08C00D2853B /* Connector.m */; };
 		22FA50040F212ED300709123 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22FA50030F212ED300709123 /* Settings.bundle */; };
 		22FA502E0F21374300709123 /* octocat.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FA502D0F21374300709123 /* octocat.png */; };
 		22FA50CE0F21463D00709123 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA50CD0F21463D00709123 /* Config.m */; };
@@ -48,6 +49,8 @@
 		22E17C1D0F22467200D2853B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		22E17C3A0F22490800D2853B /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
 		22E17C400F224A5700D2853B /* octocat_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = octocat_large.png; path = images/octocat_large.png; sourceTree = "<group>"; };
+		22E17D0B0F24F08C00D2853B /* Connector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connector.h; sourceTree = "<group>"; };
+		22E17D0C0F24F08C00D2853B /* Connector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connector.m; sourceTree = "<group>"; };
 		22FA50030F212ED300709123 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		22FA502D0F21374300709123 /* octocat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = octocat.png; path = images/octocat.png; sourceTree = "<group>"; };
 		22FA50CC0F21463D00709123 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = Classes/Config.h; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 		22FA50C70F2144F800709123 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				22E17D0B0F24F08C00D2853B /* Connector.h */,
+				22E17D0C0F24F08C00D2853B /* Connector.m */,
 				22E17B640F22334300D2853B /* Reachability.h */,
 				22E17B650F22334300D2853B /* Reachability.m */,
 				22E17B8D0F22357F00D2853B /* Controllers */,
@@ -273,6 +278,7 @@
 				22E17B910F22361B00D2853B /* ConnectivityController.m in Sources */,
 				22E17B9D0F223AA600D2853B /* ApplicationErrorViewController.m in Sources */,
 				22E17C1E0F22467200D2853B /* LoginViewController.m in Sources */,
+				22E17D0D0F24F08C00D2853B /* Connector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +314,7 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ADDITIONAL_SDKS = "$HOME/Library/SDKs/JSON/$(PLATFORM_NAME).sdk";
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -317,6 +324,10 @@
 				OTHER_CFLAGS = (
 					"-D",
 					__DEBUG__,
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-ljson",
 				);
 				PREBINDING = NO;
 				SDKROOT = iphonesimulator2.2;

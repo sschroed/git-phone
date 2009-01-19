@@ -7,6 +7,9 @@
     #import <UIKit/UIKit.h>
 #endif
 
+#import <JSON/JSON.h>
+#import "Models.h"
+
 // -----------------------------------------------------------------------------
 #pragma mark -
 #pragma mark Development Logging
