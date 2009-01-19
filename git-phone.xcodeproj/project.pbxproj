@@ -17,6 +17,9 @@
 		22E17B9D0F223AA600D2853B /* ApplicationErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E17B9C0F223AA600D2853B /* ApplicationErrorViewController.m */; };
 		22E17B9F0F223BC800D2853B /* ApplicationError.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E17B9E0F223BC800D2853B /* ApplicationError.xib */; };
 		22E17C080F223E9C00D2853B /* octocat_sad.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E17C070F223E9C00D2853B /* octocat_sad.png */; };
+		22E17C1E0F22467200D2853B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E17C1D0F22467200D2853B /* LoginViewController.m */; };
+		22E17C3B0F22490800D2853B /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E17C3A0F22490800D2853B /* Login.xib */; };
+		22E17C410F224A5700D2853B /* octocat_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E17C400F224A5700D2853B /* octocat_large.png */; };
 		22FA50040F212ED300709123 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22FA50030F212ED300709123 /* Settings.bundle */; };
 		22FA502E0F21374300709123 /* octocat.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FA502D0F21374300709123 /* octocat.png */; };
 		22FA50CE0F21463D00709123 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA50CD0F21463D00709123 /* Config.m */; };
@@ -41,6 +44,10 @@
 		22E17B9C0F223AA600D2853B /* ApplicationErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationErrorViewController.m; sourceTree = "<group>"; };
 		22E17B9E0F223BC800D2853B /* ApplicationError.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicationError.xib; sourceTree = "<group>"; };
 		22E17C070F223E9C00D2853B /* octocat_sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = octocat_sad.png; path = images/octocat_sad.png; sourceTree = "<group>"; };
+		22E17C1C0F22467200D2853B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		22E17C1D0F22467200D2853B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		22E17C3A0F22490800D2853B /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
+		22E17C400F224A5700D2853B /* octocat_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = octocat_large.png; path = images/octocat_large.png; sourceTree = "<group>"; };
 		22FA50030F212ED300709123 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		22FA502D0F21374300709123 /* octocat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = octocat.png; path = images/octocat.png; sourceTree = "<group>"; };
 		22FA50CC0F21463D00709123 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = Classes/Config.h; sourceTree = "<group>"; };
@@ -104,6 +111,8 @@
 			children = (
 				22E17B9B0F223AA600D2853B /* ApplicationErrorViewController.h */,
 				22E17B9C0F223AA600D2853B /* ApplicationErrorViewController.m */,
+				22E17C1C0F22467200D2853B /* LoginViewController.h */,
+				22E17C1D0F22467200D2853B /* LoginViewController.m */,
 			);
 			name = ViewControllers;
 			path = Classes;
@@ -112,6 +121,7 @@
 		22FA50100F21349300709123 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				22E17C400F224A5700D2853B /* octocat_large.png */,
 				22E17C070F223E9C00D2853B /* octocat_sad.png */,
 				22FA502D0F21374300709123 /* octocat.png */,
 			);
@@ -167,10 +177,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				22E17B9E0F223BC800D2853B /* ApplicationError.xib */,
 				22FA50100F21349300709123 /* Images */,
-				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
+				22E17B9E0F223BC800D2853B /* ApplicationError.xib */,
+				22E17C3A0F22490800D2853B /* Login.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 			);
 			name = Resources;
@@ -242,6 +253,8 @@
 				22FA502E0F21374300709123 /* octocat.png in Resources */,
 				22E17B9F0F223BC800D2853B /* ApplicationError.xib in Resources */,
 				22E17C080F223E9C00D2853B /* octocat_sad.png in Resources */,
+				22E17C3B0F22490800D2853B /* Login.xib in Resources */,
+				22E17C410F224A5700D2853B /* octocat_large.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +272,7 @@
 				22E17B660F22334300D2853B /* Reachability.m in Sources */,
 				22E17B910F22361B00D2853B /* ConnectivityController.m in Sources */,
 				22E17B9D0F223AA600D2853B /* ApplicationErrorViewController.m in Sources */,
+				22E17C1E0F22467200D2853B /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

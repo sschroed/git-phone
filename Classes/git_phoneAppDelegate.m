@@ -10,6 +10,7 @@
 #import "RootViewController.h"
 #import "ConnectivityController.h"
 #import "ApplicationErrorViewController.h"
+#import "LoginViewController.h"
 #import "Models.h"
 
 @interface git_phoneAppDelegate()
@@ -29,7 +30,7 @@
 	[window addSubview:[navigationController view]];
 	[window makeKeyAndVisible];
 	
-	// Ensure we have connectivity.
+	// Ensure we have connectivity to GitHub.
 	[[Config instance] setBaseURL:@"http://github.com"];
 	if(![ConnectivityController isGitHubWebServiceReachable:[[Config instance] baseURL]]) {
 		[self showError:@"Octocat cannot connect to GitHub."];
@@ -59,7 +60,9 @@
 	
 	// Check if username is set
 	if ([[Config instance] gitHubUserName] == NULL) {
-		DevLog(@"NULL");
+		LoginViewController *loginViewController = [[[LoginViewController alloc] initWithNibName:@"Login" bundle:nil] autorelease];
+		[window addSubview:[loginViewController view]];
+		[navigationController presentModalViewController:loginViewController animated:YES];
 	} else {
 		DevLog(@"NOT NULL");
 	}
