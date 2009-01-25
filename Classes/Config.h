@@ -11,11 +11,13 @@
 
 @interface Config : NSObject {
 	NSString *gitHubUserName;
+	NSString *gitHubToken;
 	NSString *baseURL;
 	NSMutableArray *repositories;
 }
 
 @property (copy) NSString *gitHubUserName;
+@property (copy) NSString *gitHubToken;
 @property (copy) NSString *baseURL;
 @property (copy) NSMutableArray *repositories;
 

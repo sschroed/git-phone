@@ -16,5 +16,6 @@
 
 + (NSString *) getJSONFromURL:(NSString *)url;  // issue a GET request
 + (NSString *) getJSONFromURL:(NSString *)url withDictionary:(NSDictionary *)dictionary;  // issues a POST request
++ (NSString *)postToURL:(NSString *)url;
 
 @end

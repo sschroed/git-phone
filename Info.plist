@@ -26,16 +26,5 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>com.protonmicro.git-phone</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>git-phone</string>
-			</array>
-		</dict>
-	</array>
 </dict>
 </plist>

@@ -22,7 +22,8 @@
 }
 
 + (void)loadAll {
-	NSString *resultJSON = [Connector getJSONFromURL:[self indexURL]];
+	
+	NSString *resultJSON = [Connector postToURL:[self indexURL]];
 	
 	NSMutableArray *returnArray = [[[NSMutableArray alloc] init] autorelease];
 	NSMutableArray *repositories = [[[NSMutableArray alloc] init] autorelease];

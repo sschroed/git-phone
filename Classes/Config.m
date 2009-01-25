@@ -12,6 +12,7 @@
 @implementation Config
 
 @synthesize gitHubUserName;
+@synthesize gitHubToken;
 @synthesize baseURL;
 @synthesize repositories;
 
@@ -34,7 +35,9 @@
 
 - (void) dealloc {
 	[gitHubUserName release];
+	[gitHubToken release];
 	[baseURL release];
+	[repositories release];
 	[super dealloc];
 }
 

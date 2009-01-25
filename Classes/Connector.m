@@ -52,7 +52,7 @@
 	NSURLResponse *response;
 	NSError *error = nil;
 
-	NSLog(@"Retrieving JSON from URL: %@", url);
+	DevLog2(@"Retrieving JSON from URL: %@", url);
 	
 	urlData = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
 
@@ -64,7 +64,7 @@
 
 }
 
-// Sent a POST to the server with the attached JSON dictionary, return JSON string.
+// Send a POST to the server with the attached JSON dictionary, return JSON string.
 + (NSString *) getJSONFromURL:(NSString *)url withDictionary:(NSDictionary *)dictionary {
 	
 	DevLog3(@"Sending JSON to %@: %@", url, [dictionary JSONRepresentation]);
@@ -80,6 +80,36 @@
 	DevLog3(@"Received JSON from URL: %@\n%@", url, resp);
 	return resp;
 	
+}
+
+// Standard POST
++ (NSString *)postToURL:(NSString *)url {
+	
+	NSString *post = [NSString stringWithFormat:@"login=%@&token=%@", [[Config instance] gitHubUserName], [[Config instance] gitHubToken]];
+	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+	
+	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+	
+	NSMutableURLRequest *postRequest = [[[NSMutableURLRequest alloc] init] autorelease];
+	[postRequest setURL:[NSURL URLWithString:url]];
+	[postRequest setHTTPMethod:@"POST"];
+	[postRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
+	[postRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+	[postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+	[postRequest setHTTPBody:postData];
+	
+	
+	NSData *urlData;
+	NSURLResponse *response;
+	NSError *error = nil;
+		
+	urlData = [NSURLConnection sendSynchronousRequest:postRequest returningResponse:&response error:&error];
+	
+	NSString *resp = [[[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding] autorelease];
+	
+	DevLog3(@"Received JSON from URL via POST: %@\n%@", url, resp);
+	
+	return resp;
 }
 
 @end
