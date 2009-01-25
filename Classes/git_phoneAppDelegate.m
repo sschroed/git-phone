@@ -54,11 +54,12 @@
 	// read user prefs
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	[[Config instance] setGitHubUserName:[defaults stringForKey:@"GitHubUserName"]];
+	[[Config instance] setGitHubToken:[defaults stringForKey:@"GitHubToken"]];
 	
 	DevLog2(@"username: %@", [[Config instance] gitHubUserName]);
 	
 	// Check if username is set
-	if ([[Config instance] gitHubUserName] == NULL) {
+	if ([[Config instance] gitHubUserName] == NULL || [[Config instance] gitHubToken] == NULL) {
 		LoginViewController *loginViewController = [[[LoginViewController alloc] initWithNibName:@"Login" bundle:nil] autorelease];
 		[window addSubview:[loginViewController view]];
 		[navigationController presentModalViewController:loginViewController animated:YES];
@@ -66,6 +67,7 @@
 		//TODO: Autologin
 		DevLog(@"NOT NULL");
 	}
+	//LOAD MAIN APP
 }
 
 - (void)dealloc {

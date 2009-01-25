@@ -11,6 +11,8 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		229445A10F2CFD4200502D5C /* private.png in Resources */ = {isa = PBXBuildFile; fileRef = 2294459F0F2CFD4200502D5C /* private.png */; };
+		229445A20F2CFD4200502D5C /* public.png in Resources */ = {isa = PBXBuildFile; fileRef = 229445A00F2CFD4200502D5C /* public.png */; };
 		22E17B660F22334300D2853B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E17B650F22334300D2853B /* Reachability.m */; };
 		22E17B890F2233E400D2853B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E17B880F2233E400D2853B /* SystemConfiguration.framework */; };
 		22E17B910F22361B00D2853B /* ConnectivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E17B900F22361B00D2853B /* ConnectivityController.m */; };
@@ -37,6 +39,8 @@
 		1D3623250D0F684500981E51 /* git_phoneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = git_phoneAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* git-phone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "git-phone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2294459F0F2CFD4200502D5C /* private.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = private.png; sourceTree = "<group>"; };
+		229445A00F2CFD4200502D5C /* public.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = public.png; sourceTree = "<group>"; };
 		22E17B640F22334300D2853B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		22E17B650F22334300D2853B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		22E17B880F2233E400D2853B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
@@ -45,17 +49,17 @@
 		22E17B9B0F223AA600D2853B /* ApplicationErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationErrorViewController.h; sourceTree = "<group>"; };
 		22E17B9C0F223AA600D2853B /* ApplicationErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationErrorViewController.m; sourceTree = "<group>"; };
 		22E17B9E0F223BC800D2853B /* ApplicationError.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicationError.xib; sourceTree = "<group>"; };
-		22E17C070F223E9C00D2853B /* octocat_sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = octocat_sad.png; path = images/octocat_sad.png; sourceTree = "<group>"; };
+		22E17C070F223E9C00D2853B /* octocat_sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octocat_sad.png; sourceTree = "<group>"; };
 		22E17C1C0F22467200D2853B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		22E17C1D0F22467200D2853B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		22E17C3A0F22490800D2853B /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
-		22E17C400F224A5700D2853B /* octocat_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = octocat_large.png; path = images/octocat_large.png; sourceTree = "<group>"; };
+		22E17C400F224A5700D2853B /* octocat_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octocat_large.png; sourceTree = "<group>"; };
 		22E17D0B0F24F08C00D2853B /* Connector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connector.h; sourceTree = "<group>"; };
 		22E17D0C0F24F08C00D2853B /* Connector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connector.m; sourceTree = "<group>"; };
 		22E17D560F25043800D2853B /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
 		22E17D570F25043800D2853B /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
 		22FA50030F212ED300709123 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		22FA502D0F21374300709123 /* octocat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = octocat.png; path = images/octocat.png; sourceTree = "<group>"; };
+		22FA502D0F21374300709123 /* octocat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octocat.png; sourceTree = "<group>"; };
 		22FA50CC0F21463D00709123 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = Classes/Config.h; sourceTree = "<group>"; };
 		22FA50CD0F21463D00709123 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Config.m; path = Classes/Config.m; sourceTree = "<group>"; };
 		22FA50DB0F2147DC00709123 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Models.h; path = Classes/Models.h; sourceTree = "<group>"; };
@@ -124,14 +128,16 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		22FA50100F21349300709123 /* Images */ = {
+		22FA50100F21349300709123 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				2294459F0F2CFD4200502D5C /* private.png */,
+				229445A00F2CFD4200502D5C /* public.png */,
 				22E17C400F224A5700D2853B /* octocat_large.png */,
 				22E17C070F223E9C00D2853B /* octocat_sad.png */,
 				22FA502D0F21374300709123 /* octocat.png */,
 			);
-			name = Images;
+			path = images;
 			sourceTree = "<group>";
 		};
 		22FA50C60F2144DF00709123 /* Models */ = {
@@ -187,7 +193,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				22FA50100F21349300709123 /* Images */,
+				22FA50100F21349300709123 /* images */,
 				22E17B9E0F223BC800D2853B /* ApplicationError.xib */,
 				22E17C3A0F22490800D2853B /* Login.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
@@ -265,6 +271,8 @@
 				22E17C080F223E9C00D2853B /* octocat_sad.png in Resources */,
 				22E17C3B0F22490800D2853B /* Login.xib in Resources */,
 				22E17C410F224A5700D2853B /* octocat_large.png in Resources */,
+				229445A10F2CFD4200502D5C /* private.png in Resources */,
+				229445A20F2CFD4200502D5C /* public.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

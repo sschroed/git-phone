@@ -11,11 +11,13 @@
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate> {
 	IBOutlet UITextField *userName;
+	IBOutlet UITextField *apiToken;
 	IBOutlet UILabel *systemPrefs;
 	IBOutlet UILabel *copyRight;
 }
 
 @property(nonatomic, retain) UITextField *userName;
+@property(nonatomic, retain) UITextField *apiToken;
 @property(nonatomic, retain) UILabel *systemPrefs;
 @property(nonatomic, retain) UILabel *copyRight;
 

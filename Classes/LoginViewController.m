@@ -11,6 +11,7 @@
 @implementation LoginViewController
 
 @synthesize userName;
+@synthesize apiToken;
 @synthesize systemPrefs;
 @synthesize copyRight;
 
@@ -19,31 +20,40 @@
 	
 	// Setup UITextFields
 	userName.font = [UIFont systemFontOfSize:16];
-	systemPrefs.font = [UIFont systemFontOfSize:11];
+	apiToken.font = [UIFont systemFontOfSize:16];
+	systemPrefs.font = [UIFont systemFontOfSize:13];
 	copyRight.font = [UIFont systemFontOfSize:11];
 }
 
 - (void)viewDidAppear:(BOOL)flag {
-	[userName becomeFirstResponder];
+	//[userName becomeFirstResponder];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	
-	if (nil != textField.text && [textField.text length] > 0){
-		[[Config instance] setGitHubUserName:[textField text]];
+	if (textField == userName) {
 		[textField resignFirstResponder];
-		[Repository loadAll];
+		[apiToken becomeFirstResponder];
 		return YES;
-	} else {
-		[self showAlert:@"Please enter your GitHub username" withTitle:@"Octocat FAIL"];
-		return NO;
+	} else if (textField == apiToken) {
+		if (nil != textField.text && [textField.text length] > 0){
+			[textField resignFirstResponder];
+			return YES;
+		} else {
+			[self showAlert:@"Please enter your GitHub username & API Token" withTitle:@"Octocat FAIL"];
+			return NO;
+		}
 	}
-	
-	
+	return YES;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-	[self dismissModalViewControllerAnimated:YES];
+	if (textField == apiToken) {
+		[[Config instance] setGitHubUserName:[userName text]];
+		[[Config instance] setGitHubToken:[apiToken text]];
+		[Repository loadAll];
+		[self dismissModalViewControllerAnimated:YES];
+	}
 }
 
 - (void)showAlert:(NSString *)message withTitle:(NSString *)title {
@@ -57,6 +67,9 @@
 
 - (void)dealloc {
 	[userName release];
+	[apiToken release];
+	[systemPrefs release];
+	[copyRight release];
     [super dealloc];
 }
 
