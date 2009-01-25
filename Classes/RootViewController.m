@@ -65,23 +65,41 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return 2;
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-    }
-    
-    // Set up the cell...
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GitHub"];
+	if(cell == nil) {
+		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero] autorelease];
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+	}
 
-    return cell;
+	switch(indexPath.section) {
+		case 0: {
+			switch(indexPath.row) {
+				case 0: {
+					cell.text = @"Public Repositories";
+					cell.image = [UIImage imageNamed:@"public.png"];
+					break;
+				}
+				case 1: {
+					cell.text = @"Private Repositories";
+					cell.image = [UIImage imageNamed:@"private.png"];
+					break;
+				}
+			}
+			break;
+		}
+		case 1: {
+			break;
+		}
+	}
+	return cell;
 }
 
 
