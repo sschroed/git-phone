@@ -51,8 +51,13 @@
 	if (textField == apiToken) {
 		[[Config instance] setGitHubUserName:[userName text]];
 		[[Config instance] setGitHubToken:[apiToken text]];
-		[Repository loadAll];
-		[self dismissModalViewControllerAnimated:YES];
+		if (![Connector didAuthenticateUser:[[Config instance] gitHubUserName] withToken:[[Config instance] gitHubToken]]) {
+			[self showAlert:@"Unable to authenticate using the credentials you provided." withTitle:@"Octocat FAIL"];
+			[userName becomeFirstResponder];
+		} else {
+			[Repository loadAll];
+			[self dismissModalViewControllerAnimated:YES];
+		}
 	}
 }
 

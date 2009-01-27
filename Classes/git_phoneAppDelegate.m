@@ -64,8 +64,8 @@
 		[window addSubview:[loginViewController view]];
 		[navigationController presentModalViewController:loginViewController animated:YES];
 	} else {
-		//TODO: Autologin
-		DevLog(@"NOT NULL");
+		//TODO: use conntector didAuthenticate User here
+		[Repository loadAll];
 	}
 	//LOAD MAIN APP
 }

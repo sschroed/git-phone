@@ -11,11 +11,12 @@
 
 @interface Connector : NSObject
 
++ (BOOL)didAuthenticateUser:(NSString *)user withToken:(NSString *)token;
++ (NSString *)getJSONFromURL:(NSString *)url;  // issue a GET request
++ (NSString *)getJSONFromURL:(NSString *)url withDictionary:(NSDictionary *)dictionary;  // issues a POST request
 + (NSMutableURLRequest *)jsonURLRequest:(NSString *)url;
 + (NSMutableURLRequest *)jsonURLRequest:(NSString *)url withDictionary:(NSDictionary *)dictionary;
-
-+ (NSString *) getJSONFromURL:(NSString *)url;  // issue a GET request
-+ (NSString *) getJSONFromURL:(NSString *)url withDictionary:(NSDictionary *)dictionary;  // issues a POST request
 + (NSString *)postToURL:(NSString *)url;
+
 
 @end

@@ -112,4 +112,32 @@
 	return resp;
 }
 
+// Make sure username & token authenticate
+// TODO: Refactor this call
++ (BOOL)didAuthenticateUser:(NSString *)user withToken:(NSString *)token {
+	NSString *post = [NSString stringWithFormat:@"login=%@&token=%@", user, token];
+	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+	NSMutableURLRequest *postRequest = [[[NSMutableURLRequest alloc] init] autorelease];
+	[postRequest setURL:[NSURL URLWithString:@"http://github.com"]];
+	[postRequest setHTTPMethod:@"POST"];
+	[postRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
+	[postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+	[postRequest setHTTPBody:postData];
+	
+	NSData *urlData;
+	NSURLResponse *response;
+	NSError *error = nil;
+	
+	urlData = [NSURLConnection sendSynchronousRequest:postRequest returningResponse:&response error:&error];
+	
+	if (error == nil) {
+		DevLog(@"Authenticated");
+		return YES;
+	} else {
+		DevLog(@"Not Authenticated");
+		return NO;
+	}
+}
+
 @end
