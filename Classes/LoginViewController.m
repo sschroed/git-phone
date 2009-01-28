@@ -55,12 +55,12 @@
 			[self showAlert:@"Unable to authenticate using the credentials you provided." withTitle:@"Octocat FAIL"];
 			[userName becomeFirstResponder];
 		} else {
-			[Repository loadAll];
 			[self dismissModalViewControllerAnimated:YES];
 		}
 	}
 }
 
+//TODO: Refactor out this method
 - (void)showAlert:(NSString *)message withTitle:(NSString *)title {
 	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title 
 														message:message

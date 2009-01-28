@@ -37,6 +37,10 @@
 	} 
 	
 	[self loadPreferences];
+	[self authenticate];
+	
+	//LOAD MAIN APP
+	[Repository loadAll];
 }
 
 
@@ -50,6 +54,24 @@
 	[[self window] addSubview:errorController.view];
 }
 
+- (void) loadLoginView {
+	LoginViewController *loginViewController = [[[LoginViewController alloc] initWithNibName:@"Login" bundle:nil] autorelease];
+	[window addSubview:[loginViewController view]];
+	[navigationController presentModalViewController:loginViewController animated:YES];
+
+}
+- (void) authenticate {
+	// Check if username is set
+	if ([[Config instance] gitHubUserName] == NULL || [[Config instance] gitHubToken] == NULL) {
+		[self loadLoginView];
+	} else {
+		if (![Connector didAuthenticateUser:[[Config instance] gitHubUserName] withToken:[[Config instance] gitHubToken]]) {
+			[self showAlert:@"Unable to auto-authenticate using the credentials saved in your settings." withTitle:@"Octocat FAIL"];
+			[self loadLoginView];
+		}
+	}
+}
+
 - (void) loadPreferences {	
 	// read user prefs
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -57,17 +79,15 @@
 	[[Config instance] setGitHubToken:[defaults stringForKey:@"GitHubToken"]];
 	
 	DevLog2(@"username: %@", [[Config instance] gitHubUserName]);
-	
-	// Check if username is set
-	if ([[Config instance] gitHubUserName] == NULL || [[Config instance] gitHubToken] == NULL) {
-		LoginViewController *loginViewController = [[[LoginViewController alloc] initWithNibName:@"Login" bundle:nil] autorelease];
-		[window addSubview:[loginViewController view]];
-		[navigationController presentModalViewController:loginViewController animated:YES];
-	} else {
-		//TODO: use conntector didAuthenticate User here
-		[Repository loadAll];
-	}
-	//LOAD MAIN APP
+}
+
+- (void)showAlert:(NSString *)message withTitle:(NSString *)title {
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title 
+														message:message
+													   delegate:nil 
+											  cancelButtonTitle:@"Try Again" otherButtonTitles:nil];
+	[alertView show];
+	[alertView release];
 }
 
 - (void)dealloc {

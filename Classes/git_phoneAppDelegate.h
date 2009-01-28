@@ -17,5 +17,8 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 
+- (void)authenticate;
+- (void)showAlert:(NSString *)message withTitle:(NSString *)title;
+
 @end
 
