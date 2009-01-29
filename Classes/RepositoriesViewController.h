@@ -14,6 +14,8 @@
 	RootViewController *rootViewController;
 	NSArray *repositories;
 }
+
 @property (nonatomic, retain) RootViewController *rootViewController;
+@property (nonatomic, retain) NSArray *repositories;
 
 @end

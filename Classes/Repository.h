@@ -9,9 +9,11 @@
 
 @interface Repository : NSObject {
 	NSString *name;
+	NSNumber *privateRepo;
 }
 
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSNumber *privateRepo;
 
 + (NSString *)indexURL;
 + (void)loadAll;

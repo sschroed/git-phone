@@ -7,4 +7,5 @@
 //
 
 #import "Config.h"
+#import "DataParser.h"
 #import "Repository.h"

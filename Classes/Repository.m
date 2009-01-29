@@ -13,6 +13,7 @@
 @implementation Repository
 
 @synthesize name;
+@synthesize privateRepo;
 
 + (NSString *)indexURL {	
 	
@@ -25,7 +26,8 @@
 	
 	NSString *resultJSON = [Connector postToURL:[self indexURL]];
 	
-	NSMutableArray *returnArray = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray *publicRepoArray = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray *privateRepoArray = [[[NSMutableArray alloc] init] autorelease];
 	NSMutableArray *repositories = [[[NSMutableArray alloc] init] autorelease];
 	
 	// GitHub JSON: {"user": {"repositories": [{repo1},{repo1}] }}
@@ -34,12 +36,25 @@
 	for (NSDictionary *repository in repositories) {
 		Repository *tempRepo = [[[Repository alloc] init] autorelease];
 		[tempRepo setName:[repository valueForKey:@"name"]];
+		[tempRepo setPrivateRepo:[DataParser readInt:[repository valueForKey:@"private"]]];
+		
 		DevLog2(@"Loaded Repo: %@", [tempRepo name]);
 		
-		[returnArray addObject:tempRepo];		
+		if ([tempRepo privateRepo] == [DataParser readInt:@"1"]) {
+			[privateRepoArray addObject:tempRepo];
+		} else {
+			[publicRepoArray addObject:tempRepo];
+		}
 	}
 	
-	[[Config instance] setRepositories:returnArray];
+	[[Config instance] setPublicRepositories:publicRepoArray];
+	[[Config instance] setPrivateRepositories:privateRepoArray];
+}
+
+- (void) dealloc {
+	[name release];
+	[privateRepo release];
+	[super dealloc];
 }
 
 

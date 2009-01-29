@@ -25,7 +25,10 @@
 		22E17C3B0F22490800D2853B /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E17C3A0F22490800D2853B /* Login.xib */; };
 		22E17C410F224A5700D2853B /* octocat_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E17C400F224A5700D2853B /* octocat_large.png */; };
 		22E17D0D0F24F08C00D2853B /* Connector.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E17D0C0F24F08C00D2853B /* Connector.m */; };
-		22E17D580F25043800D2853B /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E17D570F25043800D2853B /* Repository.m */; };
+		22EFCE200F32598F009F3C3E /* DataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EFCE1F0F32598F009F3C3E /* DataParser.m */; };
+		22EFCE410F325A3F009F3C3E /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EFCE400F325A3F009F3C3E /* Repository.m */; };
+		22EFCE800F325DFB009F3C3E /* feed.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EFCE7F0F325DFB009F3C3E /* feed.png */; };
+		22EFCE880F325EFA009F3C3E /* gravatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EFCE870F325EFA009F3C3E /* gravatar.png */; };
 		22FA50040F212ED300709123 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22FA50030F212ED300709123 /* Settings.bundle */; };
 		22FA502E0F21374300709123 /* octocat.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FA502D0F21374300709123 /* octocat.png */; };
 		22FA50CE0F21463D00709123 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA50CD0F21463D00709123 /* Config.m */; };
@@ -61,13 +64,17 @@
 		22E17C400F224A5700D2853B /* octocat_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octocat_large.png; sourceTree = "<group>"; };
 		22E17D0B0F24F08C00D2853B /* Connector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connector.h; sourceTree = "<group>"; };
 		22E17D0C0F24F08C00D2853B /* Connector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connector.m; sourceTree = "<group>"; };
-		22E17D560F25043800D2853B /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
-		22E17D570F25043800D2853B /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
+		22EFCE1E0F32598F009F3C3E /* DataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataParser.h; sourceTree = "<group>"; };
+		22EFCE1F0F32598F009F3C3E /* DataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataParser.m; sourceTree = "<group>"; };
+		22EFCE3F0F325A3F009F3C3E /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
+		22EFCE400F325A3F009F3C3E /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
+		22EFCE7F0F325DFB009F3C3E /* feed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feed.png; sourceTree = "<group>"; };
+		22EFCE870F325EFA009F3C3E /* gravatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gravatar.png; sourceTree = "<group>"; };
 		22FA50030F212ED300709123 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		22FA502D0F21374300709123 /* octocat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octocat.png; sourceTree = "<group>"; };
-		22FA50CC0F21463D00709123 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = Classes/Config.h; sourceTree = "<group>"; };
-		22FA50CD0F21463D00709123 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Config.m; path = Classes/Config.m; sourceTree = "<group>"; };
-		22FA50DB0F2147DC00709123 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Models.h; path = Classes/Models.h; sourceTree = "<group>"; };
+		22FA50CC0F21463D00709123 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		22FA50CD0F21463D00709123 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
+		22FA50DB0F2147DC00709123 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2899E55F0DE3E45000AC0155 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		28A0AAE50D9B0CCF005BE974 /* git_phone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = git_phone_Prefix.pch; sourceTree = "<group>"; };
@@ -138,6 +145,8 @@
 		22FA50100F21349300709123 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				22EFCE870F325EFA009F3C3E /* gravatar.png */,
+				22EFCE7F0F325DFB009F3C3E /* feed.png */,
 				2294459F0F2CFD4200502D5C /* private.png */,
 				229445A00F2CFD4200502D5C /* public.png */,
 				22E17C400F224A5700D2853B /* octocat_large.png */,
@@ -147,16 +156,18 @@
 			path = images;
 			sourceTree = "<group>";
 		};
-		22FA50C60F2144DF00709123 /* Models */ = {
+		22FA50C60F2144DF00709123 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				22FA50DB0F2147DC00709123 /* Models.h */,
 				22FA50CC0F21463D00709123 /* Config.h */,
 				22FA50CD0F21463D00709123 /* Config.m */,
-				22E17D560F25043800D2853B /* Repository.h */,
-				22E17D570F25043800D2853B /* Repository.m */,
+				22EFCE1E0F32598F009F3C3E /* DataParser.h */,
+				22EFCE1F0F32598F009F3C3E /* DataParser.m */,
+				22EFCE3F0F325A3F009F3C3E /* Repository.h */,
+				22EFCE400F325A3F009F3C3E /* Repository.m */,
 			);
-			name = Models;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		22FA50C70F2144F800709123 /* Networking */ = {
@@ -176,7 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				22FA50C70F2144F800709123 /* Networking */,
-				22FA50C60F2144DF00709123 /* Models */,
+				22FA50C60F2144DF00709123 /* Classes */,
 				22E17B990F223A3400D2853B /* ViewControllers */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -282,6 +293,8 @@
 				229445A10F2CFD4200502D5C /* private.png in Resources */,
 				229445A20F2CFD4200502D5C /* public.png in Resources */,
 				2218F1170F2FE3A00080FB02 /* RepositoriesView.xib in Resources */,
+				22EFCE800F325DFB009F3C3E /* feed.png in Resources */,
+				22EFCE880F325EFA009F3C3E /* gravatar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,8 +314,9 @@
 				22E17B9D0F223AA600D2853B /* ApplicationErrorViewController.m in Sources */,
 				22E17C1E0F22467200D2853B /* LoginViewController.m in Sources */,
 				22E17D0D0F24F08C00D2853B /* Connector.m in Sources */,
-				22E17D580F25043800D2853B /* Repository.m in Sources */,
 				2218F1350F2FE4110080FB02 /* RepositoriesViewController.m in Sources */,
+				22EFCE200F32598F009F3C3E /* DataParser.m in Sources */,
+				22EFCE410F325A3F009F3C3E /* Repository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

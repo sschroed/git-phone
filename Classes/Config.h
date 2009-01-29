@@ -13,13 +13,15 @@
 	NSString *gitHubUserName;
 	NSString *gitHubToken;
 	NSString *baseURL;
-	NSMutableArray *repositories;
+	NSMutableArray *publicRepositories;
+	NSMutableArray *privateRepositories;
 }
 
 @property (copy) NSString *gitHubUserName;
 @property (copy) NSString *gitHubToken;
 @property (copy) NSString *baseURL;
-@property (copy) NSMutableArray *repositories;
+@property (copy) NSMutableArray *publicRepositories;
+@property (copy) NSMutableArray *privateRepositories;
 
 + (Config *)instance;
 - (NSString *)baseAPIURL;

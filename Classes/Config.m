@@ -14,7 +14,8 @@
 @synthesize gitHubUserName;
 @synthesize gitHubToken;
 @synthesize baseURL;
-@synthesize repositories;
+@synthesize publicRepositories;
+@synthesize privateRepositories;
 
 // Make model a singleton
 + (Config *)instance
@@ -37,7 +38,8 @@
 	[gitHubUserName release];
 	[gitHubToken release];
 	[baseURL release];
-	[repositories release];
+	[publicRepositories	release];
+	[privateRepositories release];
 	[super dealloc];
 }
 
