@@ -28,7 +28,7 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 
@@ -47,6 +47,10 @@
 			break;
 		}
 		case 2: {
+			rows =  1;
+			break;
+		}
+		case 3: {
 			rows =  1;
 			break;
 		}
@@ -94,8 +98,18 @@
 		case 2: {
 			switch(indexPath.row) {
 				case 0: {
+					cell.text = @"Search";
+					cell.image = [UIImage imageNamed:@"octocat_small.png"];
+					break;
+				}
+			}
+			break;
+		}
+		case 3: {
+			switch(indexPath.row) {
+				case 0: {
 					cell.text = @"About GitHub GitPhone";
-					cell.image = [UIImage imageNamed:@"gravatar.png"];
+					cell.image = [UIImage imageNamed:@"octocat_small.png"];
 					break;
 				}
 			}

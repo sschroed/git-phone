@@ -9,13 +9,19 @@
 
 @interface Repository : NSObject {
 	NSString *name;
+	NSString *owner;
 	NSNumber *privateRepo;
+	NSMutableArray *commits;
 }
 
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *owner;
 @property (nonatomic, retain) NSNumber *privateRepo;
+@property (nonatomic, retain) NSMutableArray *commits;
 
 + (NSString *)indexURL;
 + (void)loadAll;
+- (NSString *)commitsURL;
+- (void)loadCommits;
 
 @end
