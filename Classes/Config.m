@@ -34,6 +34,21 @@
 	return [NSString stringWithFormat:@"%@/api/v1/json", [[Config instance] baseURL]];
 }
 
+- (void)rememberCredentials {
+  // Save current credentials to the defaults database
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setValue:gitHubUserName forKey:@"GitHubUserName"];
+  [defaults setValue:gitHubToken    forKey:@"GitHubToken"];
+}
+
+- (void)forgetCredentials {
+  // Clear credentials from defautls database
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setValue:nil forKey:@"GitHubUserName"];
+  [defaults setValue:nil forKey:@"GitHubToken"];
+}
+
+
 - (void) dealloc {
 	[gitHubUserName release];
 	[gitHubToken release];

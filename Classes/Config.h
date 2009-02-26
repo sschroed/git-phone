@@ -25,5 +25,7 @@
 
 + (Config *)instance;
 - (NSString *)baseAPIURL;
+- (void)rememberCredentials;
+- (void)forgetCredentials;
 
 @end

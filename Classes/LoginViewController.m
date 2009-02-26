@@ -14,6 +14,7 @@
 @synthesize apiToken;
 @synthesize systemPrefs;
 @synthesize copyRight;
+@synthesize rememberMe;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -23,6 +24,8 @@
 	apiToken.font = [UIFont systemFontOfSize:16];
 	systemPrefs.font = [UIFont systemFontOfSize:13];
 	copyRight.font = [UIFont systemFontOfSize:11];
+  
+  rememberMe.on = [[Config instance] gitHubUserName] && [[Config instance] gitHubToken];
 }
 
 - (void)viewDidAppear:(BOOL)flag {
@@ -55,6 +58,12 @@
 			[self showAlert:@"Unable to authenticate using the credentials you provided." withTitle:@"Octocat FAIL"];
 			[userName becomeFirstResponder];
 		} else {
+      if (rememberMe.on) {
+        [[Config instance] rememberCredentials];
+      } else {
+        [[Config instance] forgetCredentials];
+      }
+        
 			[self dismissModalViewControllerAnimated:YES];
 		}
 	}
