@@ -6,6 +6,15 @@ I started this project to test out some ideas for an iPhone app which utilizes a
 It's not polished.  There are no tests.  It really doesn't do anything useful and I really don't where I want to take it.  However, there is a good deal
 of infrastructure here that I feel is worth sharing, especially, since there are so few OSS iPhone apps out there in their entirety.
 
+## Moviing Forward
+
+After posting this project many people have asked if I'm going to release this to the app store.  GP is not ready in it's current state but I would like to
+get it ready.  However, I need help with coding and direction.  What do you think GP should do?  Some have suggested being able to comment on commits or edit
+wiki pages.  Maybe some hard core forking action too.
+
+I have setup git-phone in Pivotal Tracker [here](http://www.pivotaltracker.com/projects/10185).  I will add stories people submit and will accept most any commmits
+form others.  Just go ahead and start.
+
 ## Required frame-works
 
 This project uses the [json-framwork](http://code.google.com/p/json-framework/) for easy json parsing.
