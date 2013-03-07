@@ -40,11 +40,11 @@
 	NSString *authorEmail;
 }
 
-@property (nonatomic, retain) NSString *commitID;
-@property (nonatomic, retain) NSString *message;
-@property (nonatomic, retain) NSString *url;
-@property (nonatomic, retain) NSString *authorName;
-@property (nonatomic, retain) NSString *authorEmail;
+@property (nonatomic, strong) NSString *commitID;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) NSString *url;
+@property (nonatomic, strong) NSString *authorName;
+@property (nonatomic, strong) NSString *authorEmail;
 
 
 @end

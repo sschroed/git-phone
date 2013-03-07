@@ -64,7 +64,7 @@
     
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GitHub"];
 	if(cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero] autorelease];
+		cell = [[UITableViewCell alloc] initWithFrame:CGRectZero];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 	}
@@ -121,18 +121,18 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	RepositoriesViewController *repositoriesViewController = [[[RepositoriesViewController alloc] initWithNibName:@"RepositoriesView" bundle:nil] autorelease];
+	RepositoriesViewController *repositoriesViewController = [[RepositoriesViewController alloc] initWithNibName:@"RepositoriesView" bundle:nil];
 
 	switch(indexPath.section) {
 		case 0: {
 			switch(indexPath.row) {
 				case 0: {
-					[repositoriesViewController.repositories release];
+					repositoriesViewController.repositories;
 					repositoriesViewController.repositories = [[Config instance] publicRepositories];
 					break;
 				}
 				case 1: {
-					[repositoriesViewController.repositories release];
+					repositoriesViewController.repositories;
 					repositoriesViewController.repositories = [[Config instance] privateRepositories];
 					break;
 				}
@@ -151,9 +151,6 @@
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 @end

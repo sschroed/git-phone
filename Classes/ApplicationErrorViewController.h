@@ -11,7 +11,7 @@
 	UITextView *errorMessageTextView;
 }
 
-@property (nonatomic, retain) IBOutlet UITextView *errorMessageTextView;
+@property (nonatomic, strong) IBOutlet UITextView *errorMessageTextView;
 
 - (void) setErrorMessage:(NSString *)error;
 

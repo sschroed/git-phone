@@ -14,10 +14,10 @@
 	NSMutableArray *commits;
 }
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *owner;
-@property (nonatomic, retain) NSNumber *privateRepo;
-@property (nonatomic, retain) NSMutableArray *commits;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *owner;
+@property (nonatomic, strong) NSNumber *privateRepo;
+@property (nonatomic, strong) NSMutableArray *commits;
 
 + (NSString *)indexURL;
 + (void)loadAll;

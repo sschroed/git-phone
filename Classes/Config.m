@@ -49,13 +49,5 @@
 }
 
 
-- (void) dealloc {
-	[gitHubUserName release];
-	[gitHubToken release];
-	[baseURL release];
-	[publicRepositories	release];
-	[privateRepositories release];
-	[super dealloc];
-}
 
 @end
