@@ -9,7 +9,7 @@
 #import "Repository.h"
 #import "Connector.h"
 #import "Commit.h"
-
+#import "NSString+JSON.h"
 
 @implementation Repository
 
@@ -36,15 +36,15 @@
 + (void)loadAll {
 	NSString *resultJSON = [Connector postToURL:[self indexURL]];
 	
-	NSMutableArray *publicRepoArray = [[[NSMutableArray alloc] init] autorelease];
-	NSMutableArray *privateRepoArray = [[[NSMutableArray alloc] init] autorelease];
-	NSMutableArray *repositories = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray *publicRepoArray = [[NSMutableArray alloc] init];
+	NSMutableArray *privateRepoArray = [[NSMutableArray alloc] init];
+	NSMutableArray *repositories = [[NSMutableArray alloc] init];
 	
 	// GitHub JSON: {"user": {"repositories": [{repo1},{repo1}] }}
 	repositories = [[[resultJSON JSONValue] valueForKey:@"user"] valueForKey:@"repositories"];
 	
 	for (NSDictionary *repository in repositories) {
-		Repository *tempRepo = [[[Repository alloc] init] autorelease];
+		Repository *tempRepo = [[Repository alloc] init];
 		[tempRepo setName:[repository valueForKey:@"name"]];
 		[tempRepo setOwner:[repository valueForKey:@"owner"]];
 		[tempRepo setPrivateRepo:[DataParser readInt:[repository valueForKey:@"private"]]];
@@ -65,13 +65,13 @@
 - (void)loadCommits {
 	NSString *resultJSON = [Connector postToURL:[self commitsURL]];
 
-	NSMutableArray *commitsArray = [[[NSMutableArray alloc] init] autorelease];
-	NSMutableArray *repoCommits = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray *commitsArray = [[NSMutableArray alloc] init];
+	NSMutableArray *repoCommits = [[NSMutableArray alloc] init];
 	
 	repoCommits = [[resultJSON JSONValue] valueForKey:@"commits"];
 	
 	for (NSDictionary *commit in repoCommits) {
-		Commit *tempCommit = [[[Commit alloc] init] autorelease];
+		Commit *tempCommit = [[Commit alloc] init];
 		[tempCommit setCommitID:[commit valueForKey:@"id"]];
 		[tempCommit setMessage:[commit valueForKey:@"message"]];
 		[tempCommit setUrl:[commit valueForKey:@"url"]];
@@ -86,13 +86,6 @@
 	[self setCommits:commitsArray];
 }
 
-- (void) dealloc {
-	[name release];
-	[owner release];
-	[privateRepo release];
-	[commits release];
-	[super dealloc];
-}
 
 
 @end

@@ -13,15 +13,15 @@
 	IBOutlet UITextField *userName;
 	IBOutlet UITextField *apiToken;
 	IBOutlet UILabel *systemPrefs;
-	IBOutlet UILabel *copyRight;
+	IBOutlet UILabel *makeRight;
   IBOutlet UISwitch *rememberMe;
 }
 
-@property(nonatomic, retain) UITextField *userName;
-@property(nonatomic, retain) UITextField *apiToken;
-@property(nonatomic, retain) UILabel *systemPrefs;
-@property(nonatomic, retain) UILabel *copyRight;
-@property(nonatomic, retain) UISwitch *rememberMe;
+@property(nonatomic, strong) UITextField *userName;
+@property(nonatomic, strong) UITextField *apiToken;
+@property(nonatomic, strong) UILabel *systemPrefs;
+@property(nonatomic, strong) UILabel *makeRight;
+@property(nonatomic, strong) UISwitch *rememberMe;
 
 - (void)showAlert:(NSString *)message withTitle:(NSString *)title;
 

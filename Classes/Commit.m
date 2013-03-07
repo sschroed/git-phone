@@ -7,6 +7,7 @@
 //
 
 #import "Commit.h"
+#import "NSString+JSON.h"
 
 @implementation Commit
 
@@ -27,15 +28,15 @@
 //TODO: this needs to be thought out better.  Maybe loaded on the repo.
 + (NSArray *)loadAllfromRepository:(NSString *)repository {
 	
-	NSMutableArray *commitsArray = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray *commitsArray = [[NSMutableArray alloc] init];
 	NSString *resultJSON = [Connector postToURL:[self indexURLwithRepository:repository]];
 	
-	NSMutableArray *commits = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray *commits = [[NSMutableArray alloc] init];
 	
 	commits = [[resultJSON JSONValue] valueForKey:@"commits"];
 	
 	for (NSDictionary *commit in commits) {
-		Commit *tempCommit = [[[Commit alloc] init] autorelease];
+		Commit *tempCommit = [[Commit alloc] init];
 		
 		[tempCommit setCommitID:[commit valueForKey:@"id"]];
 		[tempCommit setMessage:[commit valueForKey:@"message"]];
@@ -50,14 +51,6 @@
 	return commitsArray;
 }
 
-- (void) dealloc {
-	[commitID release];
-	[message release];
-	[url release];
-	[authorName release];
-	[authorEmail release];
-	[super dealloc];
-}
 
 
 @end

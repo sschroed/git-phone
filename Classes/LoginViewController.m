@@ -13,7 +13,7 @@
 @synthesize userName;
 @synthesize apiToken;
 @synthesize systemPrefs;
-@synthesize copyRight;
+@synthesize makeRight;
 @synthesize rememberMe;
 
 - (void)viewDidLoad {
@@ -23,7 +23,7 @@
 	userName.font = [UIFont systemFontOfSize:16];
 	apiToken.font = [UIFont systemFontOfSize:16];
 	systemPrefs.font = [UIFont systemFontOfSize:13];
-	copyRight.font = [UIFont systemFontOfSize:11];
+	makeRight.font = [UIFont systemFontOfSize:11];
   
   rememberMe.on = [[Config instance] gitHubUserName] && [[Config instance] gitHubToken];
 }
@@ -76,16 +76,8 @@
 													   delegate:nil 
 											  cancelButtonTitle:@"Try Again" otherButtonTitles:nil];
 	[alertView show];
-	[alertView release];
 }
 
-- (void)dealloc {
-	[userName release];
-	[apiToken release];
-	[systemPrefs release];
-	[copyRight release];
-    [super dealloc];
-}
 
 
 @end

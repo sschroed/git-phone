@@ -95,9 +95,7 @@ static Reachability *_sharedReachability;
 - (void) dealloc
 {	
 	[self stopListeningForReachabilityChanges];
-	[_sharedReachability.reachabilityQueries release];
-	[_sharedReachability release];
-	[super dealloc];
+	//_sharedReachability.reachabilityQueries;
 }
 
 - (BOOL)isReachableWithoutRequiringConnection:(SCNetworkReachabilityFlags)flags
@@ -145,7 +143,7 @@ static Reachability *_sharedReachability;
 - (BOOL)isAdHocWiFiNetworkAvailableFlags:(SCNetworkReachabilityFlags *)outFlags
 {		
     // Look in the cache of reachability queries for one that matches this query.
-	ReachabilityQuery *query = [self.reachabilityQueries objectForKey:kLinkLocalAddressKey];
+	ReachabilityQuery *query = (self.reachabilityQueries)[kLinkLocalAddressKey];
 	SCNetworkReachabilityRef adHocWiFiNetworkReachability = query.reachabilityRef;
 	
     // If a cached reachability query was not found, create one.
@@ -162,12 +160,12 @@ static Reachability *_sharedReachability;
         
         adHocWiFiNetworkReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&sin);
 		
-		query = [[[ReachabilityQuery alloc] init] autorelease];
+		query = [[ReachabilityQuery alloc] init];
 		query.hostNameOrAddress = kLinkLocalAddressKey;
 		query.reachabilityRef = adHocWiFiNetworkReachability;
 		
         // Add the reachability query to the cache.
-		[self.reachabilityQueries setObject:query forKey:kLinkLocalAddressKey];
+		(self.reachabilityQueries)[kLinkLocalAddressKey] = query;
     }
 	
 	// If necessary, register for notifcations for the SCNetworkReachabilityRef on the current run loop.
@@ -197,12 +195,12 @@ static Reachability *_sharedReachability;
 // ReachabilityCallback is registered as the callback for network state changes in startListeningForReachabilityChanges.
 static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void *info)
 {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	@autoreleasepool {
     
     // Post a notification to notify the client that the network reachability changed.
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"kNetworkReachabilityChangedNotification" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kNetworkReachabilityChangedNotification" object:nil];
 	
-	[pool release];
+	}
 }
 
 // Perform a reachability query for the address 0.0.0.0. If that address is reachable without
@@ -210,7 +208,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 // determine which network interface is available.
 - (BOOL)isNetworkAvailableFlags:(SCNetworkReachabilityFlags *)outFlags
 {
-	ReachabilityQuery *query = [self.reachabilityQueries objectForKey:kDefaultRouteKey];
+	ReachabilityQuery *query = (self.reachabilityQueries)[kDefaultRouteKey];
 	SCNetworkReachabilityRef defaultRouteReachability = query.reachabilityRef;
 	
     // If a cached reachability query was not found, create one.
@@ -223,11 +221,11 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
         
         defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
 		
-		ReachabilityQuery *query = [[[ReachabilityQuery alloc] init] autorelease];
+		ReachabilityQuery *query = [[ReachabilityQuery alloc] init];
 		query.hostNameOrAddress = kDefaultRouteKey;
 		query.reachabilityRef = defaultRouteReachability;
 		
-		[self.reachabilityQueries setObject:query forKey:kDefaultRouteKey];
+		(self.reachabilityQueries)[kDefaultRouteKey] = query;
     }
 	
 	// If necessary, register for notifcations for the SCNetworkReachabilityRef on the current run loop.
@@ -290,7 +288,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 	}
 	
 	// Look in the cache for an existing SCNetworkReachabilityRef for hostName.
-	ReachabilityQuery *cachedQuery = [self.reachabilityQueries objectForKey:hostName];
+	ReachabilityQuery *cachedQuery = (self.reachabilityQueries)[hostName];
 	SCNetworkReachabilityRef reachabilityRefForHostName = cachedQuery.reachabilityRef;
 	
 	if (reachabilityRefForHostName) {
@@ -302,7 +300,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     
     NSAssert1(reachabilityRefForHostName != NULL, @"Failed to create SCNetworkReachabilityRef for host: %@", hostName);
     
-	ReachabilityQuery *query = [[[ReachabilityQuery alloc] init] autorelease];
+	ReachabilityQuery *query = [[ReachabilityQuery alloc] init];
 	query.hostNameOrAddress = hostName;
 	query.reachabilityRef = reachabilityRefForHostName;
 	
@@ -315,7 +313,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     [query scheduleOnRunLoop:[NSRunLoop currentRunLoop]];
     
     // ... and add it to the cache.
-    [self.reachabilityQueries setObject:query forKey:hostName];
+    (self.reachabilityQueries)[hostName] = query;
     return reachabilityRefForHostName;
 }
 
@@ -340,7 +338,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 	}
 	
 	// Look in the cache for an existing SCNetworkReachabilityRef for addressString.
-	ReachabilityQuery *cachedQuery = [self.reachabilityQueries objectForKey:addressString];
+	ReachabilityQuery *cachedQuery = (self.reachabilityQueries)[addressString];
 	SCNetworkReachabilityRef reachabilityRefForAddress = cachedQuery.reachabilityRef;
 	
 	if (reachabilityRefForAddress) {
@@ -352,7 +350,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     
     NSAssert1(reachabilityRefForAddress != NULL, @"Failed to create SCNetworkReachabilityRef for address: %@", addressString);
     
-	ReachabilityQuery *query = [[[ReachabilityQuery alloc] init] autorelease];
+	ReachabilityQuery *query = [[ReachabilityQuery alloc] init];
 	query.hostNameOrAddress = addressString;
 	query.reachabilityRef = reachabilityRefForAddress;
     
@@ -365,7 +363,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     [query scheduleOnRunLoop:[NSRunLoop currentRunLoop]];
     
     // ... and add it to the cache.
-    [self.reachabilityQueries setObject:query forKey:addressString];
+    (self.reachabilityQueries)[addressString] = query;
     return reachabilityRefForAddress;
 }
 
@@ -515,7 +513,6 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 - (void)dealloc
 {
 	CFRelease(self.runLoops);
-	[super dealloc];
 }
 
 - (BOOL)isScheduledOnRunLoop:(CFRunLoopRef)runLoop
@@ -573,7 +570,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 		return NULL;
 	}
     
-	SCNetworkReachabilityContext	context = {0, self, NULL, NULL, NULL};
+	SCNetworkReachabilityContext	context = {0, (__bridge void *)(self), NULL, NULL, NULL};
 	SCNetworkReachabilitySetCallback(reachability, ReachabilityCallback, &context);
 	SCNetworkReachabilityScheduleWithRunLoop(reachability, runLoop, kCFRunLoopDefaultMode);
 	

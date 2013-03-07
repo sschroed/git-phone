@@ -10,6 +10,9 @@
 		1D3623260D0F684500981E51 /* git_phoneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* git_phoneAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DA1DF5116E8D9DC0074ABCB /* NSString+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DF5016E8D9DC0074ABCB /* NSString+JSON.m */; };
+		1DA1DF5416E8DAB50074ABCB /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DF5316E8DAB50074ABCB /* NSDictionary+JSON.m */; };
+		1DA1DF5816E8DE6C0074ABCB /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 1DA1DF5716E8DE6C0074ABCB /* README.markdown */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2218F1170F2FE3A00080FB02 /* RepositoriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2218F1160F2FE3A00080FB02 /* RepositoriesView.xib */; };
 		2218F1350F2FE4110080FB02 /* RepositoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2218F1340F2FE4110080FB02 /* RepositoriesViewController.m */; };
@@ -47,6 +50,11 @@
 		1D3623240D0F684500981E51 /* git_phoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = git_phoneAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* git_phoneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = git_phoneAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* git-phone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "git-phone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DA1DF4F16E8D9DC0074ABCB /* NSString+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JSON.h"; sourceTree = "<group>"; };
+		1DA1DF5016E8D9DC0074ABCB /* NSString+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JSON.m"; sourceTree = "<group>"; };
+		1DA1DF5216E8DAB50074ABCB /* NSDictionary+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSON.h"; sourceTree = "<group>"; };
+		1DA1DF5316E8DAB50074ABCB /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSON.m"; sourceTree = "<group>"; };
+		1DA1DF5716E8DE6C0074ABCB /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2218F1160F2FE3A00080FB02 /* RepositoriesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesView.xib; sourceTree = "<group>"; };
 		2218F1330F2FE4110080FB02 /* RepositoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoriesViewController.h; sourceTree = "<group>"; };
@@ -129,6 +137,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1DA1DF4E16E8D9C00074ABCB /* JSON Remapped */ = {
+			isa = PBXGroup;
+			children = (
+				1DA1DF4F16E8D9DC0074ABCB /* NSString+JSON.h */,
+				1DA1DF5016E8D9DC0074ABCB /* NSString+JSON.m */,
+				1DA1DF5216E8DAB50074ABCB /* NSDictionary+JSON.h */,
+				1DA1DF5316E8DAB50074ABCB /* NSDictionary+JSON.m */,
+			);
+			name = "JSON Remapped";
+			sourceTree = "<group>";
+		};
 		22E17B8D0F22357F00D2853B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +220,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				1DA1DF5716E8DE6C0074ABCB /* README.markdown */,
+				1DA1DF4E16E8D9C00074ABCB /* JSON Remapped */,
 				22FA50C70F2144F800709123 /* Networking */,
 				22FA50C60F2144DF00709123 /* Classes */,
 				22E17B990F223A3400D2853B /* ViewControllers */,
@@ -276,6 +297,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "git-phone" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -313,6 +335,7 @@
 				22EFCE880F325EFA009F3C3E /* gravatar.png in Resources */,
 				229F5CBE0F3DB4A400767944 /* octocat_small.png in Resources */,
 				229F5CD40F3DBBF100767944 /* RepoCommitsView.xib in Resources */,
+				1DA1DF5816E8DE6C0074ABCB /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +360,8 @@
 				22EFCE410F325A3F009F3C3E /* Repository.m in Sources */,
 				229F5CCA0F3DBB3900767944 /* RepoCommitsViewController.m in Sources */,
 				229F5D000F3DBE9B00767944 /* Commit.m in Sources */,
+				1DA1DF5116E8D9DC0074ABCB /* NSString+JSON.m in Sources */,
+				1DA1DF5416E8DAB50074ABCB /* NSDictionary+JSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -354,6 +380,7 @@
 				GCC_PREFIX_HEADER = git_phone_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = "git-phone";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -361,21 +388,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = git_phone_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = "git-phone";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ADDITIONAL_SDKS = "$HOME/Library/SDKs/JSON/$(PLATFORM_NAME).sdk";
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -383,12 +411,8 @@
 					"-D",
 					__DEBUG__,
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-ljson",
-				);
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator2.2;
+				SDKROOT = iphoneos6.1;
 			};
 			name = Debug;
 		};
@@ -397,11 +421,11 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2;
+				SDKROOT = iphoneos6.1;
 			};
 			name = Release;
 		};

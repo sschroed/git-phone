@@ -55,9 +55,11 @@
 }
 
 - (void) loadLoginView {
-	LoginViewController *loginViewController = [[[LoginViewController alloc] initWithNibName:@"Login" bundle:nil] autorelease];
+	LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"Login" bundle:nil];
 	[window addSubview:[loginViewController view]];
-	[navigationController presentModalViewController:loginViewController animated:YES];
+	[navigationController presentViewController:loginViewController
+                                       animated:YES
+                                     completion:nil];
 
 }
 - (void) authenticate {
@@ -87,13 +89,7 @@
 													   delegate:nil 
 											  cancelButtonTitle:@"Try Again" otherButtonTitles:nil];
 	[alertView show];
-	[alertView release];
 }
 
-- (void)dealloc {
-	[navigationController release];
-	[window release];
-	[super dealloc];
-}
 
 @end

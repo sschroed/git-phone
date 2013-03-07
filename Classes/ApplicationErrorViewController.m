@@ -24,10 +24,5 @@
 	errorMessage = [error copy];
 }
 
-- (void)dealloc {
-	[errorMessage release];
-	[errorMessageTextView release];
-    [super dealloc];
-}
 
 @end

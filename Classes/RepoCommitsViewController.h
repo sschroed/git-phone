@@ -13,6 +13,6 @@
 	NSArray *repoCommits;
 }
 
-@property (nonatomic, retain) NSArray *repoCommits;
+@property (nonatomic, strong) NSArray *repoCommits;
 
 @end
