@@ -60,11 +60,11 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     // Set up the cell...
-	cell.text = [(Commit *)[repoCommits objectAtIndex:[indexPath row]] message];
+	cell.textLabel.text = [(Commit *)repoCommits[[indexPath row]] message];
 	
     return cell;
 }

@@ -37,7 +37,7 @@
 	
 	// Change dictionary into JSON data.  
 	// Rails webservice expects all post JSON to be wrapped in a "data" param. 
-	NSDictionary *dataDictionary = [NSDictionary dictionaryWithObjectsAndKeys: [dictionary JSONRepresentation], @"data", nil];
+	NSDictionary *dataDictionary = @{@"data": [dictionary JSONRepresentation]};
 	NSString *jsonString = [NSString stringWithString: [dataDictionary JSONRepresentation]];
 
 	NSData *jsonBody = [jsonString dataUsingEncoding:NSUTF8StringEncoding];

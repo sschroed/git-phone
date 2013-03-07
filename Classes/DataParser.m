@@ -14,9 +14,9 @@
 + (NSNumber *) readInt:(id)value {
 	
 	if(value == nil || [value isKindOfClass:[NSNull class]])
-		return [NSNumber numberWithInt:0];
+		return @0;
 	
-	return [NSNumber numberWithInt:[value intValue]];
+	return @([value intValue]);
 }
 
 @end
