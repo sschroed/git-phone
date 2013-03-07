@@ -7,7 +7,6 @@
     #import <UIKit/UIKit.h>
 #endif
 
-#import <JSON/JSON.h>
 #import	"Connector.h"
 #import "Models.h"
 

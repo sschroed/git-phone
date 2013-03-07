@@ -50,22 +50,22 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     // Set up the cell...
-	cell.text = [(Repository *)[repositories objectAtIndex:[indexPath row]] name];
+	cell.textLabel.text = [(Repository *)repositories[[indexPath row]] name];
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    RepoCommitsViewController *repoCommitsViewController = [[[RepoCommitsViewController alloc] initWithNibName:@"RepoCommitsView" bundle:nil] autorelease];
-	Repository *repository = [repositories objectAtIndex:[indexPath row]];
+    RepoCommitsViewController *repoCommitsViewController = [[RepoCommitsViewController alloc] initWithNibName:@"RepoCommitsView" bundle:nil];
+	Repository *repository = repositories[[indexPath row]];
 	
-	[repoCommitsViewController.repoCommits release];
-	[repository.commits release];
+	//repoCommitsViewController.repoCommits;
+	//repository.commits;
 	[repository loadCommits];
 	repoCommitsViewController.repoCommits = repository.commits;
 	
@@ -74,11 +74,6 @@
 }
 
 
-- (void)dealloc {
-	[repositories release];
-	[rootViewController release];
-    [super dealloc];
-}
 
 
 @end

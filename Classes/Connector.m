@@ -10,6 +10,7 @@
 //	on the data.
 
 #import "Connector.h"
+#import "NSDictionary+JSON.h"
 
 @implementation Connector
 
@@ -36,7 +37,7 @@
 	
 	// Change dictionary into JSON data.  
 	// Rails webservice expects all post JSON to be wrapped in a "data" param. 
-	NSDictionary *dataDictionary = [NSDictionary dictionaryWithObjectsAndKeys: [dictionary JSONRepresentation], @"data", nil];
+	NSDictionary *dataDictionary = @{@"data": [dictionary JSONRepresentation]};
 	NSString *jsonString = [NSString stringWithString: [dataDictionary JSONRepresentation]];
 
 	NSData *jsonBody = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
@@ -56,7 +57,7 @@
 	
 	urlData = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
 
-	NSString *str = [[[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding] autorelease];
+	NSString *str = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
 	
 	DevLog3(@"Retrieved JSON from URL: %@ \n%@", url, str);
 
@@ -76,7 +77,7 @@
 	
 	urlData = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
 
-	NSString *resp = [[[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding] autorelease];
+	NSString *resp = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
 	DevLog3(@"Received JSON from URL: %@\n%@", url, resp);
 	return resp;
 	
@@ -90,7 +91,7 @@
 	
 	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
 	
-	NSMutableURLRequest *postRequest = [[[NSMutableURLRequest alloc] init] autorelease];
+	NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] init];
 	[postRequest setURL:[NSURL URLWithString:url]];
 	[postRequest setHTTPMethod:@"POST"];
 	[postRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -105,7 +106,7 @@
 		
 	urlData = [NSURLConnection sendSynchronousRequest:postRequest returningResponse:&response error:&error];
 	
-	NSString *resp = [[[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding] autorelease];
+	NSString *resp = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
 	
 	DevLog3(@"Received JSON from URL via POST: %@\n%@", url, resp);
 	
@@ -118,7 +119,7 @@
 	NSString *post = [NSString stringWithFormat:@"login=%@&token=%@", user, token];
 	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
 	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-	NSMutableURLRequest *postRequest = [[[NSMutableURLRequest alloc] init] autorelease];
+	NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] init];
 	[postRequest setURL:[NSURL URLWithString:@"http://github.com"]];
 	[postRequest setHTTPMethod:@"POST"];
 	[postRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];

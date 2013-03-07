@@ -64,7 +64,7 @@
     
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GitHub"];
 	if(cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero] autorelease];
+		cell = [[UITableViewCell alloc] initWithFrame:CGRectZero];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 	}
@@ -73,13 +73,13 @@
 		case 0: {
 			switch(indexPath.row) {
 				case 0: {
-					cell.text = @"Public Repositories";
-					cell.image = [UIImage imageNamed:@"public.png"];
+					cell.textLabel.text = @"Public Repositories";
+					cell.imageView.image = [UIImage imageNamed:@"public.png"];
 					break;
 				}
 				case 1: {
-					cell.text = @"Private Repositories";
-					cell.image = [UIImage imageNamed:@"private.png"];
+					cell.textLabel.text = @"Private Repositories";
+					cell.imageView.image = [UIImage imageNamed:@"private.png"];
 					break;
 				}
 			}
@@ -88,8 +88,8 @@
 		case 1: {
 			switch(indexPath.row) {
 				case 0: {
-					cell.text = @"News Feed";
-					cell.image = [UIImage imageNamed:@"feed.png"];
+					cell.textLabel.text = @"News Feed";
+					cell.imageView.image = [UIImage imageNamed:@"feed.png"];
 					break;
 				}
 			}
@@ -98,8 +98,8 @@
 		case 2: {
 			switch(indexPath.row) {
 				case 0: {
-					cell.text = @"Search";
-					cell.image = [UIImage imageNamed:@"octocat_small.png"];
+					cell.textLabel.text = @"Search";
+					cell.imageView.image = [UIImage imageNamed:@"octocat_small.png"];
 					break;
 				}
 			}
@@ -108,8 +108,8 @@
 		case 3: {
 			switch(indexPath.row) {
 				case 0: {
-					cell.text = @"About GitHub GitPhone";
-					cell.image = [UIImage imageNamed:@"octocat_small.png"];
+					cell.textLabel.text = @"About GitHub GitPhone";
+					cell.imageView.image = [UIImage imageNamed:@"octocat_small.png"];
 					break;
 				}
 			}
@@ -121,18 +121,18 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	RepositoriesViewController *repositoriesViewController = [[[RepositoriesViewController alloc] initWithNibName:@"RepositoriesView" bundle:nil] autorelease];
+	RepositoriesViewController *repositoriesViewController = [[RepositoriesViewController alloc] initWithNibName:@"RepositoriesView" bundle:nil];
 
 	switch(indexPath.section) {
 		case 0: {
 			switch(indexPath.row) {
 				case 0: {
-					[repositoriesViewController.repositories release];
+					//repositoriesViewController.repositories;
 					repositoriesViewController.repositories = [[Config instance] publicRepositories];
 					break;
 				}
 				case 1: {
-					[repositoriesViewController.repositories release];
+					//repositoriesViewController.repositories;
 					repositoriesViewController.repositories = [[Config instance] privateRepositories];
 					break;
 				}
@@ -151,9 +151,6 @@
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 @end
