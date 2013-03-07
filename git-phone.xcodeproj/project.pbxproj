@@ -12,6 +12,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DA1DF5116E8D9DC0074ABCB /* NSString+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DF5016E8D9DC0074ABCB /* NSString+JSON.m */; };
 		1DA1DF5416E8DAB50074ABCB /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DF5316E8DAB50074ABCB /* NSDictionary+JSON.m */; };
+		1DA1DF5816E8DE6C0074ABCB /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 1DA1DF5716E8DE6C0074ABCB /* README.markdown */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2218F1170F2FE3A00080FB02 /* RepositoriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2218F1160F2FE3A00080FB02 /* RepositoriesView.xib */; };
 		2218F1350F2FE4110080FB02 /* RepositoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2218F1340F2FE4110080FB02 /* RepositoriesViewController.m */; };
@@ -53,6 +54,7 @@
 		1DA1DF5016E8D9DC0074ABCB /* NSString+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JSON.m"; sourceTree = "<group>"; };
 		1DA1DF5216E8DAB50074ABCB /* NSDictionary+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSON.h"; sourceTree = "<group>"; };
 		1DA1DF5316E8DAB50074ABCB /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSON.m"; sourceTree = "<group>"; };
+		1DA1DF5716E8DE6C0074ABCB /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2218F1160F2FE3A00080FB02 /* RepositoriesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesView.xib; sourceTree = "<group>"; };
 		2218F1330F2FE4110080FB02 /* RepositoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoriesViewController.h; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				1DA1DF5716E8DE6C0074ABCB /* README.markdown */,
 				1DA1DF4E16E8D9C00074ABCB /* JSON Remapped */,
 				22FA50C70F2144F800709123 /* Networking */,
 				22FA50C60F2144DF00709123 /* Classes */,
@@ -332,6 +335,7 @@
 				22EFCE880F325EFA009F3C3E /* gravatar.png in Resources */,
 				229F5CBE0F3DB4A400767944 /* octocat_small.png in Resources */,
 				229F5CD40F3DBBF100767944 /* RepoCommitsView.xib in Resources */,
+				1DA1DF5816E8DE6C0074ABCB /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
